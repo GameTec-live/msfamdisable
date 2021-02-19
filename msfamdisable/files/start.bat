@@ -25,4 +25,3 @@ if '%errorlevel%' NEQ '0' (
 
 ::ENTER YOUR CODE BELOW:
 python asci.py
-pause

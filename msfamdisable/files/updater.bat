@@ -27,6 +27,7 @@ if '%errorlevel%' NEQ '0' (
 ::ENTER YOUR CODE BELOW:
 echo Downloading Update
 python Updater.py
+python updateupdate.py
 echo Cleaning Up
 rmdir /s /Q Update
 echo update Done!
