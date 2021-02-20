@@ -1,2 +1,3 @@
 @echo off
-files/msfamdisable.bat
+cd files
+msfamdisable.bat
