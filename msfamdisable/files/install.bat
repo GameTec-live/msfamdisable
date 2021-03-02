@@ -28,6 +28,11 @@ if '%errorlevel%' NEQ '0' (
 
 ::ENTER YOUR CODE BELOW:
 
+cd..
+del Start-msfamdisable.bat
+copy Start.bat Start-msfamdisable.bat
+cd files
+
 
 echo Welcome in the Intall Wizard of msfamdisable. By Gematec_live
 
@@ -55,7 +60,7 @@ goto :GIT
 echo please install git.
 
 start "" https://git-scm.com/download/win
-
+pause
 
 
 :GIT
@@ -65,9 +70,8 @@ echo Git already installed. skipping installer.
 pip install pygame
 pip install pygame_gui
 pip install gitpython
-echo Editing permissions
-icacls "C:\Windows\System32\WpcTok.exe" /grant %username%:M
-icacls "C:\Windows\System32\WpcMon.exe" /grant %username%:M
+
+
 echo Part 1 Done!!
 echo Launching Part 2!
 python installer.py

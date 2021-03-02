@@ -39,6 +39,7 @@ print("""
 
 time.sleep (1)
 print("Part 2! ")
+
 time.sleep(1)
 print("Scanning files")
 
@@ -53,10 +54,11 @@ else:
     x = 0
 
 
+subprocess.call([r'takeown.bat'])
+
 w = open("data.txt", 'w')
 w.write(str(x))
 w.close()
-
 
 input("Press Enter to complete Setup!... You are done! Have fun :)")
 print("Starting The Programm in 5sec.")

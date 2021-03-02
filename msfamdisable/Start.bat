@@ -1,3 +1,3 @@
 @echo off
 cd files
-install.bat
+msfamdisable.bat
