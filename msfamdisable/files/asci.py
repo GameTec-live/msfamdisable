@@ -28,6 +28,7 @@ try:
 
 except:
     print("Error! No data.txt file Found! Please execute setup!")
+    subprocess.call([r'major.bat'])
     time.sleep(2)
     subprocess.call([r'debugconsole.bat'])
 
@@ -136,6 +137,7 @@ if data == 1:
 
 elif data == 2:
     print('Error By reading file: data.txt')
+    subprocess.call([r'major.bat'])
     
 
 
