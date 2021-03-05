@@ -60,7 +60,5 @@ w = open("data.txt", 'w')
 w.write(str(x))
 w.close()
 
-input("Press Enter to complete Setup!... You are done! Have fun :)")
-print("Starting The Programm in 5sec.")
-time.sleep(5)
+subprocess.call([r'complete.bat'])
 subprocess.call([r'msfamdisable.bat'])

@@ -18,6 +18,8 @@ import subprocess
 i = 0
 data = 2
 
+
+
 try:
     r = open("data.txt", 'r')
     variable = r.readline()
@@ -27,19 +29,8 @@ try:
 except:
     print("Error! No data.txt file Found! Please execute setup!")
     time.sleep(2)
-    code = input("Input Debug Code!")
-    if code == 'User007':
-        data = 1
-        print("Debug mode!")
-    elif code == 'AT642':
-        x = 1
-        w = open("data.txt", 'w')
-        w.write(str(x))
-        w.close()
-        print("Restoring the Data.txt file!")
-    else:
-        data = 2
-        exit()
+    subprocess.call([r'debugconsole.bat'])
+
 
 
 
@@ -97,9 +88,14 @@ background.fill(pygame.Color('#0000ff'))
 
 manager = pygame_gui.UIManager((800, 600))
 
+myfont = pygame.font.SysFont('Arial', 28)
 
 
-hello_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 155), (100, 50)),
+textsurface1 = myfont.render('WpcMon.exe', False, (0, 0, 0))
+
+
+
+button_one = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 155), (100, 50)),
                                             text='disable',
                                            manager=manager)
 
@@ -107,9 +103,7 @@ button_two = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 95), (
                                             text='enable',
                                            manager=manager)
 
-text_one = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((340, 5), (120, 50)),
-                                            text='WpcMon.exe',
-                                           manager=manager)
+
 
 button_rst = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((100, 5), (120, 50)),
                                             text='Restart',
@@ -117,6 +111,14 @@ button_rst = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((100, 5), (1
 
 button_help = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((100, 155), (120, 50)),
                                             text='Help',
+                                           manager=manager)
+
+button_settings = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((100, 255), (120, 50)),
+                                            text='Settings',
+                                           manager=manager)
+
+button_Done = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((100, 355), (120, 50)),
+                                            text='Done',
                                            manager=manager)
 
 
@@ -129,9 +131,8 @@ if data == 1:
                                             text='enable',
                                            manager=manager)
     
-    text_two = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((500, 5), (120, 50)),
-                                            text='WpcTok.exe',
-                                           manager=manager)
+
+    textsurface2 = myfont.render('WpcTok.exe', False, (0, 0, 0))
 
 elif data == 2:
     print('Error By reading file: data.txt')
@@ -154,7 +155,7 @@ while is_running:
                 is_running = False
             if event.type == pygame.USEREVENT:
                 if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
-                    if event.ui_element == hello_button:
+                    if event.ui_element == button_one:
                         print('Off!')
                         i = 1
                         os.rename(r'C:/Windows/System32/WpcMon.exe',r'C:/Windows/System32/WpcMonnot.exe')
@@ -185,10 +186,19 @@ while is_running:
             if event.type == pygame.USEREVENT:
                 if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                     if event.ui_element == button_help:
-                        print('Help?')
-                        print("The buttons Disable or Enable the Executables required for The Family Safety. Tipp: restart Needed after a Change! red backround = Changes made! Have to restart!")
+                        print('Starting Help')
+                        subprocess.call([r'info.bat'])
+            
+            if event.type == pygame.USEREVENT:
+                if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
+                    if event.ui_element == button_settings:
+                        print('Starting settings')
+                        subprocess.call([r'settings.bat'])
                        
-                        
+            if event.type == pygame.USEREVENT:
+                if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
+                    if event.ui_element == button_Done:
+                        is_running = False   
 
 
             if event.type == pygame.USEREVENT:
@@ -200,7 +210,7 @@ while is_running:
                             time.sleep(3)
                             subprocess.call([r'restart.bat'])
                         else:
-                            print("You have to make changes!")
+                            subprocess.call([r'restarterror.bat'])
 
 
 
@@ -209,6 +219,7 @@ while is_running:
     except:
         print("Error 1")
         print("Continuing on!")
+        subprocess.call([r'minor.bat'])
     if i == 1:
         background.fill(pygame.Color('#ff0000'))
     else:
@@ -219,4 +230,42 @@ while is_running:
 
     window_surface.blit(background, (0, 0))
     manager.draw_ui(window_surface)
+
+
+    window_surface.blit(textsurface1,(340,5))
+    
+
+    if data == 1:
+        window_surface.blit(textsurface2,(500,5))
+
+    
+
+    if os.path.exists("C:/Windows/System32/WpcMon.exe"):
+        textsurface3 = myfont.render('Aktive', False, (0, 0, 0))
+        window_surface.blit(textsurface3,(270,155))
+    
+    if os.path.exists("C:/Windows/System32/WpcMonnot.exe"):
+        textsurface3 = myfont.render('Inaktive', False, (0, 0, 0))
+        window_surface.blit(textsurface3,(270,155))
+
+    if os.path.exists("C:/Windows/System32/WpcTok.exe"):
+        textsurface4 = myfont.render('Aktive', False, (0, 0, 0))
+        window_surface.blit(textsurface4,(610,155))
+
+    if os.path.exists("C:/Windows/System32/WpcToknot.exe"):
+        textsurface4 = myfont.render('Inaktive', False, (0, 0, 0))
+        window_surface.blit(textsurface4,(610,155))
+
+
+
+
+
+
+
+
+
+
+    
+
+
     pygame.display.update()
