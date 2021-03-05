@@ -90,6 +90,7 @@ while is_running:
                     if event.ui_element == button_four:
                         print('Off!')
                         os.remove("updates.txt")
+                        subprocess.call([r'made.bat'])
                         
 
                         
@@ -101,6 +102,7 @@ while is_running:
                         print('On!')
                         x = open("updates.txt", 'w')
                         x.close()
+                        subprocess.call([r'made.bat'])
             
 
             if event.type == pygame.USEREVENT:
