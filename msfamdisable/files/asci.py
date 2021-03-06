@@ -4,7 +4,6 @@ import os
 import time
 import subprocess
 import libary
-
 #
 #Debug codes:
 #User007
@@ -35,10 +34,10 @@ except:
 
 
 
-
-
-
 libary.login()
+
+
+
 
 
 
@@ -196,7 +195,7 @@ while is_running:
                 if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                     if event.ui_element == button_settings:
                         print('Starting settings')
-                        subprocess.call([r'settings.bat'])
+                        libary.settings()
                        
             if event.type == pygame.USEREVENT:
                 if event.user_type == pygame_gui.UI_BUTTON_PRESSED:

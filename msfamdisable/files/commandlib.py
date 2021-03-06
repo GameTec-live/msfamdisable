@@ -167,7 +167,7 @@ def checkcommand(command):
     elif command == 'screenfetch':
         screenfetch()
     elif command == 'usrconfig':
-        subprocess.call([r'login.bat'])
+        libary.change()
     elif command == 'reset':
         input("Press enter to reset...")
         w = open("login.txt", 'w')
