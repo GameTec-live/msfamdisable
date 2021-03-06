@@ -1,2 +1,2 @@
 @echo off
-python debugconsole.py
+start python debugconsole.py

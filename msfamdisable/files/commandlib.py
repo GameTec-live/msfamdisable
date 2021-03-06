@@ -161,6 +161,8 @@ def checkcommand(command):
         reset : reset software.
         restore : restore the programm
         changesetting : -1 = disable WpcTok.exe -2 = enable WpcTok.exe
+        cmd : open cmd
+        start : start msfamdisable
         """)
     elif command == 'screenfetch':
         screenfetch()
@@ -192,3 +194,7 @@ def checkcommand(command):
         w = open("data.txt", 'w')
         w.write(str("1"))
         w.close()
+    elif command == 'cmd':
+        subprocess.call([r'cmd.bat'])
+    elif command == 'start':
+        subprocess.call([r'msfamdisable'])
