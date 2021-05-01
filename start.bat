@@ -1,0 +1,2 @@
+cd install
+installer.bat
