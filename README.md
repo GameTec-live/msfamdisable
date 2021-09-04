@@ -17,7 +17,7 @@ have fun!
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/GameTec-live/msfamdisable/blob/main/LICENSE" target="_blank">
-    <img alt="License: GPL3" src="https://img.shields.io/github/license/GameTec\_live/ms-famdisable" />
+    <img alt="License: GPL3" src="https://img.shields.io/github/license/GameTec-live/ms-famdisable" />
   </a>
 </p>
 
@@ -39,10 +39,10 @@ have fun!
 
 ## Author
 
-👤 **GameTec_live**
+👤 **GameTec-live**
 
 * Website: werner-web.tk
-* Github: [@GameTec\_live](https://github.com/GameTec\_live)
+* Github: [@GameTec-live](https://github.com/GameTec\_live)
 
 ## 🤝 Contributing
 
