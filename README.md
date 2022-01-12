@@ -1,3 +1,7 @@
+##DISCLAIMER:
+>>Doue to higher securety in Windows 11 this tool only works on Windows 10
+
+
 <h1 align="center">Welcome to ms-famdisable 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
