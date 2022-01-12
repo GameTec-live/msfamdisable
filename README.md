@@ -1,5 +1,5 @@
-##DISCLAIMER:
->>Doue to higher securety in Windows 11 this tool only works on Windows 10
+### DISCLAIMER:
+>Due to higher securety in Windows 11 this tool only works on Windows 10
 
 
 <h1 align="center">Welcome to ms-famdisable 👋</h1>
